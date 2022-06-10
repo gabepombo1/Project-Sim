@@ -8,27 +8,18 @@ public class Hostile : MonoBehaviour
     [SerializeField] private GameObject projectile;
     [SerializeField] private float moveSpeed;
 
-    /*Stats unitStats = new Stats();
-    unitStats.SetLevel(1);
-    unitStats.SetHealth(100);
-    unitStats.SetMana(100);
-    unitStats.SetExperience(0);
-    int unitLevel = unitStats.level;
-    int hitPoints = unitStats.SetHealth(100);
-    int manaPoints = unitStats.SetMana(100);
-    int expPoints = unitStats.SetExperience(0);
-    attackPoints = ;
-    defensePoints = ;
-    
+    /*
     //morale will be like if -1, run towards nearest friendly hostile, if +1, charge at the ally/gain determination/damage buff, 0 means run towards ally
-    moralePoints = 0;
+    public enum moralePoints{
+        
+        
+
+    };
 */
     GameObject targetRadius;
 
     void Start()
     {
-
-        //transform.position = hostileSpawner.transform.position;
 
 
     }
@@ -38,8 +29,6 @@ public class Hostile : MonoBehaviour
     {
         
         transform.position = new Vector2(transform.position.x + moveSpeed * Time.deltaTime, transform.position.y);
-        
-        //transform.position = new Vector2(transform.position.x + moveSpeed * Time.deltaTime, transform.position.y);
         
         //Interactions interactions = new Interactions();
         redTargetList target = gameObject.AddComponent<redTargetList>();
@@ -75,11 +64,10 @@ public class Hostile : MonoBehaviour
                 Debug.Log("ally found (Debug.Log) a position: " + allyPosition + " !");
                 collision.gameObject.SendMessage("ally found (collision.gameObject.SendMessage)");
                 //regroup towards
-                //transform.position = new Vector2(transform.position.x + movespeed * Time.deltaTime, transform.position.y);
                 transform.position = new Vector2(transform.position.x - (allyPosition.x) + moveSpeed * Time.deltaTime, transform.position.y - (allyPosition.y));
 
             }
-            Debug.Log("poo");
+            Debug.Log("test");
         }
     }
 }
