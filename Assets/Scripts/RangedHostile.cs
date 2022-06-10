@@ -2,6 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+//using a collider as a way for targeting may be less costly than calculating the distance between the shooter and the target every tick and checking if the shooter
+//can shoo the target or not. This would be very true for large battles. You would also need some sort of hierarchy on how to decide what to shoot when inside the collider
+//you can queue the targets as they enter, and dequeue once they leave the collider(calculate distance or use collider), you can do some analysis and make an algorithm
+//that determines the target based on distance, health, and the target they are shooting (if they are shooting a weak target, then attack them) or maybe have a state
+//machine that changes the unit's behavior based on what you set it to. the analysis makes more sense since this is going to be a simulation
+
 public class RangedHostile : Hostile
 {
     
